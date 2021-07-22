@@ -32,7 +32,7 @@ while j<n
             a11=D(j,j);
             a12=D(j,j+1);
             aQ=a11^2+a12^2;
-            [f_min,f_max,alpha2{k}]=fuzzy_complex_poles_f_1(a11,a12,T); %extracts the functions f(x) & f(x+1) to operate the limites. 
+            [f_min,f_max,alpha2{k}]=fuzzy_complex_poles_f_1(a11,a12,T); %extracts the functions f(x) & f(x+1) to operate the limits. 
             %Also extracts the membership functions for that value.
             d1=[-a11/aQ a12/aQ;-a12/aQ -a11/aQ]*f_min; %lower limit calculation
             d2=[-a11/aQ a12/aQ;-a12/aQ -a11/aQ]*f_max;%upper limit calculation
@@ -52,7 +52,7 @@ while j<n
             j=j+1;
         end
 end
-if j==n; %This section only applyes for the last item of the diagonal since the counter may left it under calculation under certain conditions 
+if j==n; %This section only applyes for the last item of the diagonal since the counter may left it unsolved under certain conditions 
     %and does exactly the same as shown above.
     if (D(n,n)~=0)%If the value is real
            d(j)=(1-exp(-D(j,j)*T))/D(j,j)/T; 
